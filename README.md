@@ -1,4 +1,4 @@
-# PROYECTO BASE: [Nombre de la Aplicación] - Software Factory SENA
+# PROYECTO BASE: [Guía 7 - Operadores Modernos] - Software Factory SENA
 
 **Metodología:** *"Del Requerimiento al Producto"*
 

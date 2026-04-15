@@ -1,4 +1,6 @@
 // Ejercicios de Apropiación
+import { procesarPedido } from "./Apropiación/Ejercicio1.js";
+
 import evaluar from './Apropiación/Ej7.js';
 
 // Inicializar función prompt
@@ -8,6 +10,7 @@ const prompt = PromptSync();
 // Objeto de secciones y ejercicios
 
 const Aprop = {
+    Ej1: "Gestión de pedidos con rest y destructuración",
     Ej7: "Evaluación de datos con try...catch + spread",
 };
 
@@ -15,7 +18,7 @@ const Aprop = {
 let condition = true;
 
 while (condition) {
-    const { Ej7 } = Aprop;
+    const { Ej1, Ej7 } = Aprop;
 
     console.log("----------------------------------------");
     
@@ -32,11 +35,32 @@ while (condition) {
 
             console.log("Has seleccionado Apropiación");
             
-            console.log(`Seleccione el ejercicio a revisar: \n 7. ${Ej7} \n 8. Salir`);
+            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 7. ${Ej7} \n 8. Salir`);
             
             let ej = prompt();
 
             switch (ej) {
+                case "1":
+                    console.log("----------------------------------------");
+
+                    console.log(`Has seleccionado el ejercicio ${Ej1}`);
+
+                    const pedido = {
+                        cliente: "Oscar",
+                        producto: "Gorra 5 paneles",
+                        cantidad: 5
+                    };
+
+                    const resultado = procesarPedido(
+                        pedido,
+                        "envío gratis",
+                        "descuento 20%"
+                    );
+
+                    console.log(resultado);
+
+                    break;
+
                 case "7":
                     console.log("----------------------------------------");
 

@@ -1,5 +1,5 @@
 //Ejercicio 1 de apropiación
-import { procesarPedido } from "./Apropiacion/Ejercicio1.js";
+import { procesarPedido } from "./Apropiación/Ejercicio1.js";
 
 const pedido = {
     cliente: "Oscar",

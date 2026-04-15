@@ -1,16 +1,26 @@
 {
-  "name": "3315656---guia-7---operadores-modernos",
+  "name": "guia7",
   "version": "1.0.0",
-  "type": "module",
   "description": "**Metodología:** *\"Del Requerimiento al Producto\"*",
-  "main": "app.js",
+  "homepage": "https://github.com/MiguelFlVe/3315656---Guia-7---Operadores-Modernos#readme",
+  "bugs": {
+    "url": "https://github.com/MiguelFlVe/3315656---Guia-7---Operadores-Modernos/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiguelFlVe/3315656---Guia-7---Operadores-Modernos.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
 }

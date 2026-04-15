@@ -1,6 +1,8 @@
 // Ejercicios de Apropiación
 // Ejercicio 1: Gestión de pedidos con rest y destructuración
 import { procesarPedido } from "./Apropiación/Ej1.js";
+// Ejercicio 3: Registro de actividades con manejo de errores
+import { registrarActividad } from "./Apropiación/Ej3.js";
 // Ejercicio 7: Evaluación de datos con try...catch + spread
 import evaluar from './Apropiación/Ej7.js';
 // Ejercicio 8: Fusión de colecciones y validación final
@@ -13,6 +15,7 @@ const prompt = PromptSync();
 // Objeto de secciones y ejercicios
 const Aprop = {
     Ej1: "Gestión de pedidos con rest y destructuración",
+    Ej3: "Registro de actividades con manejo de errores",
     Ej7: "Evaluación de datos con try...catch + spread",
     Ej8: "Fusión de colecciones y validación final"
 };
@@ -21,7 +24,7 @@ const Aprop = {
 let condition = true;
 
 while (condition) {
-    const { Ej1, Ej7, Ej8 } = Aprop;
+    const { Ej1, Ej3, Ej7, Ej8 } = Aprop;
 
     // Selección de la sección a revisar
     console.log("----------------------------------------");
@@ -39,7 +42,7 @@ while (condition) {
 
             console.log("Has seleccionado Apropiación");
             
-            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 7. ${Ej7} \n 8. ${Ej8} \n 9. Salir`);
+            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 3. ${Ej3} \n 7. ${Ej7} \n 8. ${Ej8} \n 9. Salir`);
             
             let ej = prompt();
 
@@ -65,6 +68,25 @@ while (condition) {
                     console.log(resultado);
 
                     break;
+
+                // Ejercicio 3: Registro de actividades con manejo de errores    
+                case "3":
+                    console.log("----------------------------------------");
+
+                    console.log(`Has seleccionado el ejercicio ${Ej3}`);
+
+                    const actividad1 = {
+                       nombre: "Entrenamiento",
+                       fecha: "2026-04-15"
+                              };
+
+                    const actividad2 = {
+                         nombre: "Reunión"
+                          };
+
+                    console.log(registrarActividad(actividad1));
+                    console.log(registrarActividad(actividad2));
+                    break
 
                 // Ejercicio 7: Evaluación de datos con try...catch + spread
                 case "7":

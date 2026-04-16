@@ -9,6 +9,11 @@ import evaluar from './Apropiación/Ej7.js';
 // Ejercicio 8: Fusión de colecciones y validación final
 import fusionarColecciones from './Apropiación/Ej8.js';
 
+// Ejercicios de Transferencia
+
+// Ejercicio 5: Motor de configuración avanzada
+import configFinal from './Transferencia/Ej5.js';
+
 // Inicializar función prompt
 import PromptSync from 'prompt-sync';
 const prompt = PromptSync();
@@ -21,11 +26,16 @@ const Aprop = {
     Ej8: "Fusión de colecciones y validación final"
 };
 
+const Transf = {
+    Ej5: "Motor de configuración avanzada"
+};
+
 // Ejecución del programa
 let condition = true;
 
 while (condition) {
     const { Ej1, Ej2, Ej7, Ej8 } = Aprop;
+    const { Ej5 } = Transf;
 
     // Selección de la sección a revisar
     console.log("----------------------------------------");
@@ -156,7 +166,7 @@ while (condition) {
                 case "9":
                     console.log("----------------------------------------");
 
-                    condition = false;
+                    console.log("Volviendo al menú inicial");
                     
                     break;
 
@@ -170,6 +180,47 @@ while (condition) {
             }
 
             break;
+
+        case "B":
+            // Selección del ejercicio a revisar en la sección de Transferencia
+            console.log("----------------------------------------");
+
+            console.log("Has seleccionado Transferencia");
+            
+            console.log(`Seleccione el ejercicio a revisar: \n 5. ${Ej5} \n 6. Salir`);
+
+            let ejTransf = prompt();
+
+            switch (ejTransf) {
+                // Ejercicio 5: Motor de configuración avanzada
+                case "5":
+                    console.log("----------------------------------------");
+
+                    console.log(`Has seleccionado el ejercicio ${Ej5}`);
+
+                    const baseConfig = {
+                        modo: "Producción",
+                        lenguaje: "es",
+                        nivel: 1
+                    };
+
+                    const extraConfig = {
+                        nivel: 2,
+                        tema: "oscuro"
+                    };
+
+                    configFinal(baseConfig, extraConfig);
+
+                    break;
+
+                // Salir del ejercicio
+                case "6":
+                    console.log("----------------------------------------");
+
+                    console.log("Volviendo al menú inicial");
+                    
+                    break;
+            }
     
         // Opción para salir del programa
         case "C":

@@ -12,6 +12,8 @@ import evaluar from './Apropiación/Ej7.js';
 import fusionarColecciones from './Apropiación/Ej8.js';
 
 // Ejercicios de Transferencia
+// Ejercicio 1: Sistema de registro académico
+import { crearEstudiante } from "./Transferencia/Ej1.js";
 // Ejercicio 5: Motor de configuración avanzada
 import configFinal from './Transferencia/Ej5.js';
 
@@ -29,6 +31,7 @@ const Aprop = {
 };
 
 const Transf = {
+    Ej1: "Sistema de registro académico",
     Ej5: "Motor de configuración avanzada"
 };
 
@@ -207,11 +210,21 @@ while (condition) {
 
             console.log("Has seleccionado Transferencia");
             
-            console.log(`Seleccione el ejercicio a revisar: \n 5. ${Ej5} \n 6. Salir`);
+            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 5. ${Ej5} \n 6. Salir`);
 
             let ejTransf = prompt();
 
             switch (ejTransf) {
+
+                //Ejercicio 1: Sistema de registro académico
+                case "1":
+                    console.log("----------------------------------------");
+
+                    console.log(`Has seleccionado el ejercicio ${Ej1}`);
+
+                    const est = crearEstudiante("Oscar", 4, 3, 5);
+
+                    console.log(est);
                 
                // Ejercicio 5: Motor de configuración avanzada
                 case "5":

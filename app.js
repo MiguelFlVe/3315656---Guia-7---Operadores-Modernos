@@ -1,6 +1,9 @@
 // Ejercicios de Apropiación
+
 // Ejercicio 1: Gestión de pedidos con rest y destructuración
 import { procesarPedido } from "./Apropiación/Ej1.js";
+//Ejercicio 2: Control de inventario con inmutabilidad y spread
+import { agregarInventario } from "./Apropiación/Ej2.js";
 // Ejercicio 7: Evaluación de datos con try...catch + spread
 import evaluar from './Apropiación/Ej7.js';
 // Ejercicio 8: Fusión de colecciones y validación final
@@ -13,6 +16,7 @@ const prompt = PromptSync();
 // Objeto de secciones y ejercicios
 const Aprop = {
     Ej1: "Gestión de pedidos con rest y destructuración",
+    Ej2: "Control de inventario con inmutabilidad y spread",
     Ej7: "Evaluación de datos con try...catch + spread",
     Ej8: "Fusión de colecciones y validación final"
 };
@@ -21,7 +25,7 @@ const Aprop = {
 let condition = true;
 
 while (condition) {
-    const { Ej1, Ej7, Ej8 } = Aprop;
+    const { Ej1, Ej2, Ej7, Ej8 } = Aprop;
 
     // Selección de la sección a revisar
     console.log("----------------------------------------");
@@ -39,7 +43,7 @@ while (condition) {
 
             console.log("Has seleccionado Apropiación");
             
-            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 7. ${Ej7} \n 8. ${Ej8} \n 9. Salir`);
+            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 2. ${Ej2} \n 7. ${Ej7} \n 8. ${Ej8} \n 9. Salir`);
             
             let ej = prompt();
 
@@ -65,6 +69,21 @@ while (condition) {
                     console.log(resultado);
 
                     break;
+
+                //Ejercicio 2: Control de inventario con inmutabilidad y spread   
+                case "2":
+                    console.log("----------------------------------------");
+
+                    console.log(`Has seleccionado el ejercicio ${Ej2}`); 
+
+                    const inventario = ["cámara", "trípode", "micrófono"];
+
+                    const nuevoInventario = agregarInventario(inventario, "luces LED");
+
+                    console.log("\nNuevo inventario:", nuevoInventario);
+                    console.log(`El inventario ahora tiene ${nuevoInventario.length} ítems`);
+
+                    break
 
                 // Ejercicio 7: Evaluación de datos con try...catch + spread
                 case "7":

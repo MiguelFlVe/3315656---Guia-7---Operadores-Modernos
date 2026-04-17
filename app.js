@@ -251,7 +251,8 @@ while (condition) {
                       console.error(error.message);
                       
                               }
-                    break         
+                    break 
+                            
                 // Ejercicio 5: Motor de configuración avanzada
                 case "5":
                     console.log("----------------------------------------");

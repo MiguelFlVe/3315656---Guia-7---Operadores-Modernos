@@ -123,6 +123,18 @@ while (condition) {
           console.log(registrarActividad(actividad1));
           console.log(registrarActividad(actividad2));
           break
+        // Ejercicio 4: Mezcla de configuraciones con spread y destructuración
+        case "4":
+          console.log("----------------------------------------");
+
+          console.log(`Has seleccionado el ejercicio ${Ej4}`);
+
+          const idioma = configurarUsuario(defaults, { idioma: "en" });
+
+          console.log(idioma);
+
+          break
+
 
         // Ejercicio 7: Evaluación de datos con try...catch + spread
         case "7":

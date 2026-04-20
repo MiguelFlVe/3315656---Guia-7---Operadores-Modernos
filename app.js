@@ -6,6 +6,8 @@ import { procesarPedido } from "./Apropiación/Ej1.js";
 import { agregarInventario } from "./Apropiación/Ej2.js";
 // Ejercicio 3: Registro de actividades con manejo de errores
 import { registrarActividad } from "./Apropiación/Ej3.js";
+// Ejercicio 5: Actualización de perfiles con inmutabilidad + rest
+import { actualizarPerfil } from './perfil.js';
 // Ejercicio 7: Evaluación de datos con try...catch + spread
 import evaluar from './Apropiación/Ej7.js';
 // Ejercicio 8: Fusión de colecciones y validación final
@@ -28,6 +30,7 @@ const Aprop = {
     Ej1: "Gestión de pedidos con rest y destructuración",
     Ej2: "Control de inventario con inmutabilidad y spread",
     Ej3: "Registro de actividades con manejo de errores",
+    Ej5: "Actualización de perfiles con inmutabilidad + rest",
     Ej7: "Evaluación de datos con try...catch + spread",
     Ej8: "Fusión de colecciones y validación final"
 };
@@ -60,7 +63,7 @@ while (condition) {
 
             console.log("Has seleccionado Apropiación");
             
-            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 2. ${Ej2} \n 3. ${Ej3} \n 7. ${Ej7} \n 8. ${Ej8} \n 9. Salir`);
+            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 2. ${Ej2} \n 3. ${Ej3} \n 5. ${Ej5} \n 7. ${Ej7} \n 8. ${Ej8} \n 9. Salir`);
             
             let ej = prompt();
 
@@ -87,7 +90,7 @@ while (condition) {
 
                     break;
 
-                //Ejercicio 2: Control de inventario con inmutabilidad y spread   
+                //Ejercicio 2: Control de inventario con inmutabilidad y spread
                 case "2":
                     console.log("----------------------------------------");
 
@@ -102,24 +105,48 @@ while (condition) {
 
                     break
 
-                // Ejercicio 3: Registro de actividades con manejo de errores    
+                // Ejercicio 3: Registro de actividades con manejo de errores
                 case "3":
                     console.log("----------------------------------------");
 
                     console.log(`Has seleccionado el ejercicio ${Ej3}`);
 
                     const actividad1 = {
-                       nombre: "Entrenamiento",
-                       fecha: "2026-04-15"
+                      nombre: "Entrenamiento",
+                      fecha: "2026-04-15"
                               };
 
                     const actividad2 = {
-                         nombre: "Reunión"
+                        nombre: "Reunión"
                           };
 
                     console.log(registrarActividad(actividad1));
                     console.log(registrarActividad(actividad2));
                     break
+                // Ejercicio 4: Actualización de perfiles con inmutabilidad + rest
+                case "4":
+                const usuarioOriginal = {
+                  nombre: "Jesus David",
+                  edad: 18,
+                  ciudad: "Girón",
+                  rol: "Aprendiz"
+                };
+
+                const usuarioModificado = actualizarPerfil(
+                  usuarioOriginal,
+                  { edad: 18 },
+                  { ciudad: "Bucaramanga" },
+                  { hobby: "Programación" }
+                );
+
+                console.log("--- Perfil Original ---");
+                console.log(usuarioOriginal);
+
+                console.log("--- Perfil Actualizado (Inmutabilidad aplicada) ---");
+                console.log(usuarioModificado);
+
+                console.log("¿Son el mismo objeto?:", usuarioOriginal === usuarioModificado ? "Sí" : "No (Éxito)");
+                break
 
                 // Ejercicio 7: Evaluación de datos con try...catch + spread
                 case "7":

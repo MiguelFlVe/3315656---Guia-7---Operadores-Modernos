@@ -8,6 +8,8 @@ import { agregarInventario } from "./Apropiación/Ej2.js";
 import { registrarActividad } from "./Apropiación/Ej3.js";
 // Ejercicio 5: Actualización de perfiles con inmutabilidad + rest
 import { actualizarPerfil } from './perfil.js';
+// Ejercicio 6: Análisis de ventas con destructuración profunda
+import { calcularTotalPrimerProducto } from './ventas.js';
 // Ejercicio 7: Evaluación de datos con try...catch + spread
 import evaluar from './Apropiación/Ej7.js';
 // Ejercicio 8: Fusión de colecciones y validación final
@@ -27,306 +29,325 @@ const prompt = PromptSync();
 
 // Objeto de secciones y ejercicios
 const Aprop = {
-    Ej1: "Gestión de pedidos con rest y destructuración",
-    Ej2: "Control de inventario con inmutabilidad y spread",
-    Ej3: "Registro de actividades con manejo de errores",
-    Ej5: "Actualización de perfiles con inmutabilidad + rest",
-    Ej7: "Evaluación de datos con try...catch + spread",
-    Ej8: "Fusión de colecciones y validación final"
+  Ej1: "Gestión de pedidos con rest y destructuración",
+  Ej2: "Control de inventario con inmutabilidad y spread",
+  Ej3: "Registro de actividades con manejo de errores",
+  Ej5: "Actualización de perfiles con inmutabilidad + rest",
+  Ej6: "Análisis de ventas con destructuración profunda",
+  Ej7: "Evaluación de datos con try...catch + spread",
+  Ej8: "Fusión de colecciones y validación final"
 };
 
 const Transf = {
-    Ej1: "Sistema de registro académico",
-    Ej2: "Fusionar catalogos",
-    Ej5: "Motor de configuración avanzada"
+  Ej1: "Sistema de registro académico",
+  Ej2: "Fusionar catalogos",
+  Ej5: "Motor de configuración avanzada"
 };
 
 // Ejecución del programa
 let condition = true;
 
 while (condition) {
-    const { Ej1, Ej2, Ej3, Ej7, Ej8 } = Aprop;
+  const { Ej1, Ej2, Ej3, Ej7, Ej8 } = Aprop;
 
-    // Selección de la sección a revisar
-    console.log("----------------------------------------");
+  // Selección de la sección a revisar
+  console.log("----------------------------------------");
 
-    console.log("Desarrollo de la Guía 7 de javascript");
-    
-    console.log("Seleccione la sección a revisar (Por favor, ingrese la letra correspondiente a su selección, en mayúscula): \n A. Apropiación \n B. Transferencia \n C. Salir");
-    
-    let sec = prompt();
+  console.log("Desarrollo de la Guía 7 de javascript");
 
-    switch (sec) {
-        case "A":
-            // Selección del ejercicio a revisar en la sección de Apropiación
-            console.log("----------------------------------------");
+  console.log("Seleccione la sección a revisar (Por favor, ingrese la letra correspondiente a su selección, en mayúscula): \n A. Apropiación \n B. Transferencia \n C. Salir");
 
-            console.log("Has seleccionado Apropiación");
-            
-            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 2. ${Ej2} \n 3. ${Ej3} \n 5. ${Ej5} \n 7. ${Ej7} \n 8. ${Ej8} \n 9. Salir`);
-            
-            let ej = prompt();
+  let sec = prompt();
 
-            switch (ej) {
-                // Ejercicio 1: Gestión de pedidos con rest y destructuración
-                case "1":
-                    console.log("----------------------------------------");
+  switch (sec) {
+    case "A":
+      // Selección del ejercicio a revisar en la sección de Apropiación
+      console.log("----------------------------------------");
 
-                    console.log(`Has seleccionado el ejercicio ${Ej1}`);
+      console.log("Has seleccionado Apropiación");
 
-                    const pedido = {
-                        cliente: "Oscar",
-                        producto: "Gorra 5 paneles",
-                        cantidad: 5
-                    };
+      console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 2. ${Ej2} \n 3. ${Ej3} \n 5. ${Ej5} \n 6.
+              ${Ej6} \n 7. ${Ej7} \n 8. ${Ej8} \n 9. Salir`);
 
-                    const resultado = procesarPedido(
-                        pedido,
-                        "envío gratis",
-                        "descuento 20%"
-                    );
+      let ej = prompt();
 
-                    console.log(resultado);
+      switch (ej) {
+        // Ejercicio 1: Gestión de pedidos con rest y destructuración
+        case "1":
+          console.log("----------------------------------------");
 
-                    break;
+          console.log(`Has seleccionado el ejercicio ${Ej1}`);
 
-                //Ejercicio 2: Control de inventario con inmutabilidad y spread
-                case "2":
-                    console.log("----------------------------------------");
+          const pedido = {
+            cliente: "Oscar",
+            producto: "Gorra 5 paneles",
+            cantidad: 5
+          };
 
-                    console.log(`Has seleccionado el ejercicio ${Ej2}`); 
+          const resultado = procesarPedido(
+            pedido,
+            "envío gratis",
+            "descuento 20%"
+          );
 
-                    const inventario = ["cámara", "trípode", "micrófono"];
+          console.log(resultado);
 
-                    const nuevoInventario = agregarInventario(inventario, "luces LED");
+          break;
 
-                    console.log("\nNuevo inventario:", nuevoInventario);
-                    console.log(`El inventario ahora tiene ${nuevoInventario.length} ítems`);
+        //Ejercicio 2: Control de inventario con inmutabilidad y spread
+        case "2":
+          console.log("----------------------------------------");
 
-                    break
+          console.log(`Has seleccionado el ejercicio ${Ej2}`);
 
-                // Ejercicio 3: Registro de actividades con manejo de errores
-                case "3":
-                    console.log("----------------------------------------");
+          const inventario = ["cámara", "trípode", "micrófono"];
 
-                    console.log(`Has seleccionado el ejercicio ${Ej3}`);
+          const nuevoInventario = agregarInventario(inventario, "luces LED");
 
-                    const actividad1 = {
-                      nombre: "Entrenamiento",
-                      fecha: "2026-04-15"
-                              };
+          console.log("\nNuevo inventario:", nuevoInventario);
+          console.log(`El inventario ahora tiene ${nuevoInventario.length} ítems`);
 
-                    const actividad2 = {
-                        nombre: "Reunión"
-                          };
+          break
 
-                    console.log(registrarActividad(actividad1));
-                    console.log(registrarActividad(actividad2));
-                    break
-                // Ejercicio 4: Actualización de perfiles con inmutabilidad + rest
-                case "4":
-                const usuarioOriginal = {
-                  nombre: "Jesus David",
-                  edad: 18,
-                  ciudad: "Girón",
-                  rol: "Aprendiz"
-                };
+        // Ejercicio 3: Registro de actividades con manejo de errores
+        case "3":
+          console.log("----------------------------------------");
 
-                const usuarioModificado = actualizarPerfil(
-                  usuarioOriginal,
-                  { edad: 18 },
-                  { ciudad: "Bucaramanga" },
-                  { hobby: "Programación" }
-                );
+          console.log(`Has seleccionado el ejercicio ${Ej3}`);
 
-                console.log("--- Perfil Original ---");
-                console.log(usuarioOriginal);
+          const actividad1 = {
+            nombre: "Entrenamiento",
+            fecha: "2026-04-15"
+          };
 
-                console.log("--- Perfil Actualizado (Inmutabilidad aplicada) ---");
-                console.log(usuarioModificado);
+          const actividad2 = {
+            nombre: "Reunión"
+          };
 
-                console.log("¿Son el mismo objeto?:", usuarioOriginal === usuarioModificado ? "Sí" : "No (Éxito)");
-                break
+          console.log(registrarActividad(actividad1));
+          console.log(registrarActividad(actividad2));
+          break
+        // Ejercicio 5: Actualización de perfiles con inmutabilidad + rest
+        case "5":
+          const usuarioOriginal = {
+            nombre: "Jesus David",
+            edad: 18,
+            ciudad: "Girón",
+            rol: "Aprendiz"
+          };
 
-                // Ejercicio 7: Evaluación de datos con try...catch + spread
-                case "7":
-                    console.log("----------------------------------------");
+          const usuarioModificado = actualizarPerfil(
+            usuarioOriginal,
+            { edad: 18 },
+            { ciudad: "Bucaramanga" },
+            { hobby: "Programación" }
+          );
 
-                    console.log(`Has seleccionado el ejercicio ${Ej7}`);
-                    
-                    let data = [];
-                    
-                    while (true) {
-                        console.log("Ingrese un número (deje en blanco para finalizar):");
-                        
-                        let input = prompt();
-                        
-                        if (input === "") {
-                            break;
-                        }
-                        
-                        input = parseFloat(input);
-                        
-                        data.push(input);
-                        
-                    }
-                    
-                    evaluar(...data);
-                    break;
+          console.log("--- Perfil Original ---");
+          console.log(usuarioOriginal);
 
-                // Ejercicio 8: Fusión de colecciones y validación final
-                case "8":
-                    console.log("----------------------------------------");
+          console.log("--- Perfil Actualizado (Inmutabilidad aplicada) ---");
+          console.log(usuarioModificado);
 
-                    console.log(`Has seleccionado el ejercicio ${Ej8}`);
+          console.log("¿Son el mismo objeto?:", usuarioOriginal === usuarioModificado ? "Sí" : "No (Éxito)");
+          break
+        // Ejercicio 6: Análisis de ventas con destructuración profunda
+        case "6":
+          const ventas = [
+            { producto: "teclado", detalles: { precio: 50, unidades: 3 } },
+            { producto: "mouse", detalles: { precio: 20, unidades: 5 } }
+          ];
 
-                    const lista1 = [];
+          // Llamada a la función pasando el arreglo completo
+          const total = calcularTotalPrimerProducto(ventas);
 
-                    const lista2 = [];
+          console.log(`Análisis de Ventas:`);
+          console.log(`Producto: ${ventas[0].producto}`);
+          console.log(`Precio: $${ventas[0].detalles.precio}`);
+          console.log(`Unidades: ${ventas[0].detalles.unidades}`);
+          console.log(`--------------------------`);
+          console.log(`Total vendido del primer producto: $${total}`);
+          break
 
-                    while (true) {
-                        console.log("Ingrese los elementos de la primera lista (deje en blanco para finalizar):");
+        // Ejercicio 7: Evaluación de datos con try...catch + spread
+        case "7":
+          console.log("----------------------------------------");
 
-                        let input1 = prompt();
+          console.log(`Has seleccionado el ejercicio ${Ej7}`);
 
-                        if (input1 === "") {
-                            break;
-                        }
+          let data = [];
 
-                        lista1.push(input1);
-                    }
+          while (true) {
+            console.log("Ingrese un número (deje en blanco para finalizar):");
 
-                    while (true) {
-                        console.log("Ingrese los elementos de la segunda lista (deje en blanco para finalizar):");
+            let input = prompt();
 
-                        let input2 = prompt();
-
-                        if (input2 === "") {
-                            break;
-                        }
-
-                        lista2.push(input2);
-                        
-                    }
-
-                    const fusionada = fusionarColecciones(lista1, lista2);
-
-                    console.log("Lista fusionada:", fusionada);
-
-                    break;
-
-                // Salir del ejercicio
-                case "9":
-                    console.log("----------------------------------------");
-
-                    console.log("Volviendo al menú inicial");
-                    
-                    break;
-
-                // Opción no válida
-                default:
-                    console.log("----------------------------------------");
-
-                    console.log("Opción no válida, por favor intente de nuevo.");
-                    
-                    break;
+            if (input === "") {
+              break;
             }
 
-            break;
+            input = parseFloat(input);
 
-        case "B":
-            // Selección del ejercicio a revisar en la sección de Transferencia
-            console.log("----------------------------------------");
+            data.push(input);
 
-            console.log("Has seleccionado Transferencia");
-            
-            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 2. ${Ej2} \n 5. ${Ej5} \n 6. Salir`);
+          }
 
-            let ejTransf = prompt();
+          evaluar(...data);
+          break;
 
-            switch (ejTransf) {
-               //Ejercicio 1: Sistema de registro académico
-                case "1":
-                    console.log("----------------------------------------");
+        // Ejercicio 8: Fusión de colecciones y validación final
+        case "8":
+          console.log("----------------------------------------");
 
-                    console.log(`Has seleccionado el ejercicio ${Ej1}`);
+          console.log(`Has seleccionado el ejercicio ${Ej8}`);
 
-                    const est = crearEstudiante("Oscar", 4, 3, 5);
+          const lista1 = [];
 
-                    console.log(est);
+          const lista2 = [];
 
-                    break
-               // Ejercicio 2: Fusionar Catalogos
-                case "2":
-                    console.log("----------------------------------------");
+          while (true) {
+            console.log("Ingrese los elementos de la primera lista (deje en blanco para finalizar):");
 
-                    console.log(`Has seleccionado el ejercicio ${Ej2}`);
+            let input1 = prompt();
 
-                    const catalogoA = [
-                     { id: 1, nombre: "Curso JavaScript", precio: 40 },
-                     { id: 2, nombre: "Curso HTML", precio: 35 }
-                                       ];
-
-                    const catalogoB = [
-                     { id: 3, nombre: "Curso CSS", precio: 30 }
-                                     ];
-
-                    try {
-                      const resultado = fusionarCatalogos(catalogoA, catalogoB);
-                      console.log(resultado);
-                    } catch (error) {
-                      console.error(error.message);
-                      
-                              }
-                    break 
-                            
-                // Ejercicio 5: Motor de configuración avanzada
-                case "5":
-                    console.log("----------------------------------------");
-
-                    console.log(`Has seleccionado el ejercicio ${Ej5}`);
-
-                    const baseConfig = {
-                        modo: "Producción",
-                        lenguaje: "es",
-                        nivel: 1
-                    };
-
-                    const extraConfig = {
-                        nivel: 2,
-                        tema: "oscuro"
-                    };
-
-                    configFinal(baseConfig, extraConfig);
-
-                    break;
-
-                // Salir del ejercicio
-                case "6":
-                    console.log("----------------------------------------");
-
-                    console.log("Volviendo al menú inicial");
-                    
-                    break;
+            if (input1 === "") {
+              break;
             }
-    
-        // Opción para salir del programa
-        case "C":
-            console.log("----------------------------------------");
 
-            console.log("Finalizando programa...");
-            
-            condition = false;
-            
-            break;
+            lista1.push(input1);
+          }
 
-        // Opción no válida para la sección
+          while (true) {
+            console.log("Ingrese los elementos de la segunda lista (deje en blanco para finalizar):");
+
+            let input2 = prompt();
+
+            if (input2 === "") {
+              break;
+            }
+
+            lista2.push(input2);
+
+          }
+
+          const fusionada = fusionarColecciones(lista1, lista2);
+
+          console.log("Lista fusionada:", fusionada);
+
+          break;
+
+        // Salir del ejercicio
+        case "9":
+          console.log("----------------------------------------");
+
+          console.log("Volviendo al menú inicial");
+
+          break;
+
+        // Opción no válida
         default:
-            console.log("----------------------------------------");
-            
-            console.log("Opción no válida, por favor intente de nuevo.");
-            
-            break;
-    }
-    
+          console.log("----------------------------------------");
+
+          console.log("Opción no válida, por favor intente de nuevo.");
+
+          break;
+      }
+
+      break;
+
+    case "B":
+      // Selección del ejercicio a revisar en la sección de Transferencia
+      console.log("----------------------------------------");
+
+      console.log("Has seleccionado Transferencia");
+
+      console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 2. ${Ej2} \n 5. ${Ej5} \n 6. Salir`);
+
+      let ejTransf = prompt();
+
+      switch (ejTransf) {
+        //Ejercicio 1: Sistema de registro académico
+        case "1":
+          console.log("----------------------------------------");
+
+          console.log(`Has seleccionado el ejercicio ${Ej1}`);
+
+          const est = crearEstudiante("Oscar", 4, 3, 5);
+
+          console.log(est);
+
+          break
+        // Ejercicio 2: Fusionar Catalogos
+        case "2":
+          console.log("----------------------------------------");
+
+          console.log(`Has seleccionado el ejercicio ${Ej2}`);
+
+          const catalogoA = [
+            { id: 1, nombre: "Curso JavaScript", precio: 40 },
+            { id: 2, nombre: "Curso HTML", precio: 35 }
+          ];
+
+          const catalogoB = [
+            { id: 3, nombre: "Curso CSS", precio: 30 }
+          ];
+
+          try {
+            const resultado = fusionarCatalogos(catalogoA, catalogoB);
+            console.log(resultado);
+          } catch (error) {
+            console.error(error.message);
+
+          }
+          break
+
+        // Ejercicio 5: Motor de configuración avanzada
+        case "5":
+          console.log("----------------------------------------");
+
+          console.log(`Has seleccionado el ejercicio ${Ej5}`);
+
+          const baseConfig = {
+            modo: "Producción",
+            lenguaje: "es",
+            nivel: 1
+          };
+
+          const extraConfig = {
+            nivel: 2,
+            tema: "oscuro"
+          };
+
+          configFinal(baseConfig, extraConfig);
+
+          break;
+
+        // Salir del ejercicio
+        case "6":
+          console.log("----------------------------------------");
+
+          console.log("Volviendo al menú inicial");
+
+          break;
+      }
+
+    // Opción para salir del programa
+    case "C":
+      console.log("----------------------------------------");
+
+      console.log("Finalizando programa...");
+
+      condition = false;
+
+      break;
+
+    // Opción no válida para la sección
+    default:
+      console.log("----------------------------------------");
+
+      console.log("Opción no válida, por favor intente de nuevo.");
+
+      break;
+  }
+
 }

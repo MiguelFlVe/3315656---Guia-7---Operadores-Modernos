@@ -25,24 +25,29 @@ const prompt = PromptSync();
 
 // Objeto de secciones y ejercicios
 const Aprop = {
-    Ej1: "Gestión de pedidos con rest y destructuración",
-    Ej2: "Control de inventario con inmutabilidad y spread",
-    Ej3: "Registro de actividades con manejo de errores",
-    Ej7: "Evaluación de datos con try...catch + spread",
-    Ej8: "Fusión de colecciones y validación final"
+    A1: "Gestión de pedidos con rest y destructuración",
+    A2: "Control de inventario con inmutabilidad y spread",
+    A3: "Registro de actividades con manejo de errores",
+    A7: "Evaluación de datos con try...catch + spread",
+    A8: "Fusión de colecciones y validación final"
 };
 
 const Transf = {
-    Ej1: "Sistema de registro académico",
-    Ej2: "Fusionar catalogos",
-    Ej5: "Motor de configuración avanzada"
+    T1: "Sistema de registro académico",
+    T2: "Fusionar catalogos",
+    T5: "Motor de configuración avanzada"
 };
 
 // Ejecución del programa
 let condition = true;
 
 while (condition) {
-    const { Ej1, Ej2, Ej3, Ej7, Ej8 } = Aprop;
+    // Llamamiento de los objetos de ejercicios
+    // Ejercicios de Apropiación
+    const { A1, A2, A3, A7, A8 } = Aprop;
+    
+    // Ejercicios de Transferencia
+    const { T1, T2, T5 } = Transf;
 
     // Selección de la sección a revisar
     console.log("----------------------------------------");
@@ -60,7 +65,7 @@ while (condition) {
 
             console.log("Has seleccionado Apropiación");
             
-            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 2. ${Ej2} \n 3. ${Ej3} \n 7. ${Ej7} \n 8. ${Ej8} \n 9. Salir`);
+            console.log(`Seleccione el ejercicio a revisar: \n 1. ${A1} \n 2. ${A2} \n 3. ${A3} \n 7. ${A7} \n 8. ${A8} \n 9. Salir`);
             
             let ej = prompt();
 
@@ -69,7 +74,7 @@ while (condition) {
                 case "1":
                     console.log("----------------------------------------");
 
-                    console.log(`Has seleccionado el ejercicio ${Ej1}`);
+                    console.log(`Has seleccionado el ejercicio ${A1}`);
 
                     const pedido = {
                         cliente: "Oscar",
@@ -91,7 +96,7 @@ while (condition) {
                 case "2":
                     console.log("----------------------------------------");
 
-                    console.log(`Has seleccionado el ejercicio ${Ej2}`); 
+                    console.log(`Has seleccionado el ejercicio ${A2}`); 
 
                     const inventario = ["cámara", "trípode", "micrófono"];
 
@@ -106,7 +111,7 @@ while (condition) {
                 case "3":
                     console.log("----------------------------------------");
 
-                    console.log(`Has seleccionado el ejercicio ${Ej3}`);
+                    console.log(`Has seleccionado el ejercicio ${A3}`);
 
                     const actividad1 = {
                        nombre: "Entrenamiento",
@@ -125,7 +130,7 @@ while (condition) {
                 case "7":
                     console.log("----------------------------------------");
 
-                    console.log(`Has seleccionado el ejercicio ${Ej7}`);
+                    console.log(`Has seleccionado el ejercicio ${A7}`);
                     
                     let data = [];
                     
@@ -151,7 +156,7 @@ while (condition) {
                 case "8":
                     console.log("----------------------------------------");
 
-                    console.log(`Has seleccionado el ejercicio ${Ej8}`);
+                    console.log(`Has seleccionado el ejercicio ${A8}`);
 
                     const lista1 = [];
 
@@ -213,7 +218,7 @@ while (condition) {
 
             console.log("Has seleccionado Transferencia");
             
-            console.log(`Seleccione el ejercicio a revisar: \n 1. ${Ej1} \n 2. ${Ej2} \n 5. ${Ej5} \n 6. Salir`);
+            console.log(`Seleccione el ejercicio a revisar: \n 1. ${T1} \n 2. ${T2} \n 5. ${T5} \n 6. Salir`);
 
             let ejTransf = prompt();
 
@@ -222,7 +227,7 @@ while (condition) {
                 case "1":
                     console.log("----------------------------------------");
 
-                    console.log(`Has seleccionado el ejercicio ${Ej1}`);
+                    console.log(`Has seleccionado el ejercicio ${T1}`);
 
                     const est = crearEstudiante("Oscar", 4, 3, 5);
 
@@ -233,7 +238,7 @@ while (condition) {
                 case "2":
                     console.log("----------------------------------------");
 
-                    console.log(`Has seleccionado el ejercicio ${Ej2}`);
+                    console.log(`Has seleccionado el ejercicio ${T2}`);
 
                     const catalogoA = [
                      { id: 1, nombre: "Curso JavaScript", precio: 40 },
@@ -257,7 +262,7 @@ while (condition) {
                 case "5":
                     console.log("----------------------------------------");
 
-                    console.log(`Has seleccionado el ejercicio ${Ej5}`);
+                    console.log(`Has seleccionado el ejercicio ${T5}`);
 
                     const baseConfig = {
                         modo: "Producción",
